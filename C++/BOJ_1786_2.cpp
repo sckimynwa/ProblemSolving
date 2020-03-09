@@ -10,8 +10,8 @@ vector<int> getPi(string str) {
     int len = (int)str.size(), j=0;
     vector<int> pi(len, 0);
     for(int i=1; i<len;i++){
-        while(j>0 && pi[i] != pi[j]) j = pi[j-1];
-        if(pi[i] == pi[j]) pi[i] = ++j;
+        while(j>0 && str[i] != str[j]) j = pi[j-1];
+        if(str[i] == str[j]) pi[i] = ++j;
     }
     return pi;
 }
@@ -44,6 +44,6 @@ int main() {
     printf("%d\n", (int)matched.size());
     for(auto i: matched)
         printf("%d", i+1);
-        
+
     return 0;
 }
